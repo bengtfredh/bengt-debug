@@ -14,7 +14,7 @@ jobs:
       packages: write
     env:
       IMAGE_NAME: bengt-debug
-      REGISTRY: ghcr.io/bengt-debug
+      REGISTRY: ghcr.io/bengtfredh
     steps:
       - name: Clone the repository
         uses: actions/checkout@v4
