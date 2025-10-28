@@ -4,3 +4,15 @@
     "config:recommended"
   ]
 }
+
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "prCreation": "immediate",
+  "automerge": true,
+  "automergeType": "pr",
+  "platformAutomerge": true,
+  "rebaseWhen": "behind-base-branch",
+  "rangeStrategy": "replace",
+  "ignoreTests": false
+}
