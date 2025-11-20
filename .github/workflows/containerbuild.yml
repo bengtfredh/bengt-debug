@@ -23,7 +23,7 @@ jobs:
       CR_REGISTRY: cr.fredhs.net
     steps:
       - name: Clone the repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Buildah Action
         id: build-image
