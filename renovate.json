@@ -3,11 +3,5 @@
   "extends": [
     "config:recommended"
   ],
-  "prCreation": "immediate",
-  "automerge": true,
-  "automergeType": "pr",
-  "platformAutomerge": true,
-  "rebaseWhen": "behind-base-branch",
-  "rangeStrategy": "replace",
-  "ignoreTests": false
+  "platformAutomerge": true
 }
