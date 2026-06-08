@@ -3,7 +3,6 @@ LABEL org.opencontainers.image.authors="Bengt <bengt@fredhs.net>"
 
 RUN apk update && apk upgrade -a && \
     apk add bash iputils bind-tools openssh-client curl postgresql-client && \
-    mv /etc/profile.d/color_prompt.sh.disabled /etc/profile.d/color_prompt.sh && \
     rm -rf /tmp/* /var/cache/apk/*
 
 RUN printf '%s\n' \
@@ -17,6 +16,8 @@ RUN printf '%s\n' \
     "alias mv='mv -i'" \
     "alias rm='rm -i'" \
     "alias vi='vim'" \
-    > /etc/profile.d/aliases.sh
+    > /root/.bashrc
+
+WORKDIR /root
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
