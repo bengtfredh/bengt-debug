@@ -3,5 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "platformAutomerge": true
+  "platformAutomerge": true,
+  "schedule": ["at any time"]
 }
