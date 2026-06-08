@@ -6,6 +6,10 @@ on:
   schedule:
     - cron: "33 3 * * *"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: Build image
