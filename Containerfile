@@ -6,17 +6,17 @@ RUN apk update && apk upgrade -a && \
     mv /etc/profile.d/color_prompt.sh.disabled /etc/profile.d/color_prompt.sh && \
     rm -rf /tmp/* /var/cache/apk/*
 
-RUN tee /etc/profile.d/aliases.sh << 'EOF'
-alias cp='cp -i'
-alias egrep='grep -E --color=auto'
-alias fgrep='grep -F --color=auto'
-alias grep='grep --color=auto'
-alias l.='ls -d .* --color=auto'
-alias ll='ls -l --color=auto'
-alias ls='ls --color=auto'
-alias mv='mv -i'
-alias rm='rm -i'
-alias vi='vim'
-EOF
+RUN printf '%s\n' \
+    "alias cp='cp -i'" \
+    "alias egrep='grep -E --color=auto'" \
+    "alias fgrep='grep -F --color=auto'" \
+    "alias grep='grep --color=auto'" \
+    "alias l.='ls -d .* --color=auto'" \
+    "alias ll='ls -l --color=auto'" \
+    "alias ls='ls --color=auto'" \
+    "alias mv='mv -i'" \
+    "alias rm='rm -i'" \
+    "alias vi='vim'" \
+    > /etc/profile.d/aliases.sh
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
