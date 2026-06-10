@@ -1,7 +1,6 @@
 name: Buildah build
 on:
   push:
-  pull_request:
   workflow_dispatch:
   schedule:
     - cron: "33 3 * * *"
