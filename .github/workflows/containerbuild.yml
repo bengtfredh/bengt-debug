@@ -42,7 +42,7 @@ jobs:
             ./Containerfile
 
       - name: Log in to ghcr.io
-        uses: redhat-actions/podman-login@v1
+        uses: redhat-actions/podman-login@v2
         with:
           registry: ${{ env.GHCR_REGISTRY }}
           username: ${{ github.actor }}
@@ -81,7 +81,7 @@ jobs:
         run: buildah tag ${{ steps.build-image.outputs.image }}:${{ env.IMAGE_TAG }} ${{ env.CR_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
 
       - name: Log in to cr.fredhs.net
-        uses: redhat-actions/podman-login@v1
+        uses: redhat-actions/podman-login@v2
         with:
           registry: ${{ env.CR_REGISTRY }}
           username: ${{ secrets.CR_FREDHS_NET_USR }}
