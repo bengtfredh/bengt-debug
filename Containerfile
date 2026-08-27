@@ -2,7 +2,8 @@ FROM docker.io/library/alpine@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db8
 LABEL org.opencontainers.image.authors="Bengt <bengt@fredhs.net>"
 
 RUN apk update && apk upgrade -a && \
-    apk add bash iputils bind-tools openssh-client curl postgresql-client && \
+    apk add bash bind-tools ca-certificates curl iputils jq mtr nmap \
+    openssh-client openssl postgresql-client python3 socat tcpdump tshark && \
     rm -rf /tmp/* /var/cache/apk/*
 
 RUN printf '%s\n' \
