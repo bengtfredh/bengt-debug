@@ -3,7 +3,8 @@ LABEL org.opencontainers.image.authors="Bengt <bengt@fredhs.net>"
 
 RUN apk update && apk upgrade -a && \
     apk add bash bind-tools ca-certificates curl iputils jq mtr nmap \
-    openssh-client openssl postgresql-client python3 socat tcpdump tshark && \
+    openssh-client openssl postgresql-client python3 socat tcpdump \
+    tcptraceroute traceroute tshark util-linux-misc && \
     rm -rf /tmp/* /var/cache/apk/*
 
 RUN printf '%s\n' \
